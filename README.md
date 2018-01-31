@@ -8,7 +8,7 @@
 * ES Observables  
   https://github.com/tc39/proposal-observable
 
-* ES Async Iterators
+* ES Async Iterators  
   https://github.com/tc39/proposal-async-iteration
   
   * http://2ality.com/2016/10/asynchronous-iteration.html
@@ -16,6 +16,10 @@
   * [Why Async Iterators Matter](https://docs.google.com/presentation/d/1r2V1sLG8JSSk8txiLh4wfTkom-BoOsk52FgPBy8o3RM/edit?usp=sharing)
   
     ![](https://pbs.twimg.com/media/DUyiW_8X0AAadXm.jpg:large)
+
+* ES Callbags
+  
+  * [Why we need Callbags](https://staltz.com/why-we-need-callbags.html)
 
 
 ## Topics
@@ -27,3 +31,21 @@
 
   > Observables and readable streams both share the semantic of "zero or more chunks, followed by either an error or done signal". But beyond that, they are not very comparable.
 
+
+## To Read
+
+* https://github.com/cyclejs/cyclejs/issues/581
+
+* https://vimeo.com/album/4578937
+
+* https://www.youtube.com/watch?v=sTSQlYX5DU0
+
+* https://github.com/ReactiveX/rxjs/issues/752#issuecomment-161234549
+
+* https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87
+
+* https://github.com/tc39/proposal-observable/issues/43#issuecomment-121003367
+
+* https://github.com/ReactiveX/rxjs/issues/29
+
+* https://github.com/pull-stream/pull-stream
