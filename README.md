@@ -32,6 +32,12 @@
   > Observables and readable streams both share the semantic of "zero or more chunks, followed by either an error or done signal". But beyond that, they are not very comparable.
 
 
+### Streams vs Async Iterables
+
+* https://github.com/whatwg/streams/blob/master/FAQ.md  
+  > readable streams are a specialized type of async iterable optimized for things like off-main-thread data transfer and precise backpressure signaling
+
+
 ## To Read
 
 * https://github.com/cyclejs/cyclejs/issues/581
