@@ -1,4 +1,4 @@
-# data-engineering
+# data-engineering-patterns
 
 ## Patterns
 
