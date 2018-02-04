@@ -31,6 +31,8 @@
     * > Data consumers: JavaScript has language constructs that consume data. For example, for-of loops over values and the spread operator (...) inserts values into Arrays or function calls.
 
       > ES6 introduces the interface Iterable. Data consumers use it, data sources implement it
+      
+      > Iterable and iterators are part of a so-called protocol (interfaces plus rules for using them) for iteration. A key characteristic of this protocol is that it is sequential: the iterator returns values one at a time. That means that if an iterable data structure is non-linear (such as a tree), iteration will linearize it.
 
 
 * ES Async Iterators  
