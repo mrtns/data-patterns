@@ -8,6 +8,31 @@
 * ES Observables  
   https://github.com/tc39/proposal-observable
 
+* ES Iterators  
+  http://exploringjs.com/es6/ch_iteration.html
+ 
+  * http://exploringjs.com/es6/ch_iteration.html#sec_iterability
+  
+    * ```typescript
+      interface Iterable {
+          [Symbol.iterator]() : Iterator;
+      }
+      interface Iterator {
+          next() : IteratorResult;
+      }
+      interface IteratorResult {
+          value: any;
+          done: boolean;
+      }  
+      ```
+
+    * ![](http://exploringjs.com/es6/images/iteration----consumers_sources.jpg)  
+
+    * > Data consumers: JavaScript has language constructs that consume data. For example, for-of loops over values and the spread operator (...) inserts values into Arrays or function calls.
+
+      > ES6 introduces the interface Iterable. Data consumers use it, data sources implement it
+
+
 * ES Async Iterators  
   https://github.com/tc39/proposal-async-iteration
   
