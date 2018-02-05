@@ -44,10 +44,113 @@
   
     ![](https://pbs.twimg.com/media/DUyiW_8X0AAadXm.jpg:large)
 
+* ES Generators  
+  http://exploringjs.com/es6/ch_generators.html  
+  
+  * [Implementing iterables via generators](http://exploringjs.com/es6/ch_generators.html#_implementing-iterables-via-generators)
+  
+    * [Iterable combinators (e.g. `take()`)](http://exploringjs.com/es6/ch_generators.html#_the-iterable-combinator-take)
+      (Including [Infinite iterables](http://exploringjs.com/es6/ch_generators.html#_infinite-iterables-1))
+  
+  * [Generators for lazy evaluation](http://exploringjs.com/es6/ch_generators.html#_generators-for-lazy-evaluation)
+    
+    * [Generators as iterators (data production)](http://exploringjs.com/es6/ch_generators.html#_lazy-pull-generators-as-iterators)
+      > Lazy pull with generators works as follows. The three generators implementing steps 1–3 are chained as follows:
+
+      ```
+      const CHARS = '2 apples and 5 oranges.';
+      const CHAIN2 = addNumbers(extractNumbers(tokenize(logAndYield(CHARS))));
+      [...CHAIN2];
+      ```
+      > Each of the chain members pulls data from a source and yields a sequence of items. Processing starts with tokenize whose source is the string CHARS.
+      
+      ```
+      function* logAndYield(iterable, prefix='') {
+        for (const item of iterable) {
+          console.log(prefix + item);
+          yield item;
+        }
+      }
+      ```
+      
+    * [Generators as observers (data consumption)](http://exploringjs.com/es6/ch_generators.html#_lazy-push-generators-as-observables)
+          
+      ```
+      const INPUT = '2 apples and 5 oranges.';
+      const CHAIN = tokenize(extractNumbers(addNumbers(logItems())));
+      send(INPUT, CHAIN);
+      ```
+      
+      ```
+      /**
+       * Pushes the items of `iterable` into `sink`, a generator.
+       * It uses the generator method `next()` to do so.
+       */
+      function send(iterable, sink) {
+          for (const x of iterable) {
+              sink.next(x);
+          }
+          sink.return(); // signal end of stream
+      }      
+      ```
+    
+    * [Generators as coroutines (cooperative multitasking)](http://exploringjs.com/es6/ch_generators.html#_cooperative-multi-tasking-via-generators)
+    
+      * [Pausing long-running tasks](http://exploringjs.com/es6/ch_generators.html#_pausing-long-running-tasks)
+        
+        ```
+        run(countUp());
+
+        function run(generatorObject) {
+            if (!generatorObject.next().done) {
+                // Add a new task to the event queue
+                setTimeout(function () {
+                    run(generatorObject);
+                }, 1000);
+            }
+        }
+        function* countUp(start = 0) {
+            const counterSpan = document.querySelector('#counter');
+            while (true) {
+                counterSpan.textContent = String(start);
+                start++;
+                yield; // pause
+            }
+        }
+        ```
+    
+      * [Communicating Sequential Processes (CSP)](http://exploringjs.com/es6/ch_generators.html#sec_csp)
+      
+        ```
+        import csp from 'js-csp';
+
+        csp.go(function* () {
+            const element = document.querySelector('#uiElement1');
+            const channel = listen(element, 'mousemove');
+            while (true) {
+                const event = yield csp.take(channel);
+                const x = event.layerX || event.clientX;
+                const y = event.layerY || event.clientY;
+                element.textContent = `${x}, ${y}`;
+            }
+        });
+
+        function listen(element, type) {
+            const channel = csp.chan();
+            element.addEventListener(type,
+                event => {
+                    csp.putAsync(channel, event);
+                });
+            return channel;
+        }
+        ```
+
 * ES Callbags
   
   * [Why we need Callbags](https://staltz.com/why-we-need-callbags.html)
 
+* ES flow  
+  callbacks -> promises -> generators -> async/await
 
 ## Topics
 
