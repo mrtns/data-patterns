@@ -4,9 +4,15 @@
 
 * ES Streams  
   https://streams.spec.whatwg.org/
+
+* [Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming)
+
+* Reactive extensions
+
+  * ES Observables  
+    https://github.com/tc39/proposal-observable
   
-* ES Observables  
-  https://github.com/tc39/proposal-observable
+  * [Reactive extensions](https://en.wikipedia.org/wiki/Reactive_extensions)
 
 * ES Iterators  
   http://exploringjs.com/es6/ch_iteration.html
@@ -185,3 +191,7 @@
 * https://github.com/ReactiveX/rxjs/issues/29
 
 * https://github.com/pull-stream/pull-stream
+
+* https://github.com/conal/talk-2015-essence-and-origins-of-frp
+
+* 
