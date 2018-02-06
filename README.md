@@ -14,6 +14,12 @@
   
   * [Reactive extensions](https://en.wikipedia.org/wiki/Reactive_extensions)
 
+* [Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming)
+
+  * > Functional reactive programming (FRP) is a programming paradigm for reactive programming (asynchronous dataflow programming) using the building blocks of functional programming (e.g. map, reduce, filter).
+  
+    > aiming to simplify these problems by explicitly modeling time.
+
 * ES Iterators  
   http://exploringjs.com/es6/ch_iteration.html
  
