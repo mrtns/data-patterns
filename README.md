@@ -163,6 +163,8 @@
 
 * ES flow  
   callbacks -> promises -> generators -> async/await
+  
+* [.NET Pipelines](https://msdn.microsoft.com/en-us/library/ff963548.aspx)
 
 ## Topics
 
