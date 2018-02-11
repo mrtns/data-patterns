@@ -166,6 +166,8 @@
   
 * [.NET Pipelines](https://msdn.microsoft.com/en-us/library/ff963548.aspx)
 
+* [PyToolz](http://toolz.readthedocs.io/en/latest/index.html)
+
 ## Topics
 
 ### Streams vs Observables
